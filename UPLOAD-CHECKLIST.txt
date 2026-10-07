@@ -1,0 +1,15 @@
+QGE RATE PORTAL — UPLOAD CHECKLIST
+
+Before uploading:
+[ ] All package contents are at repository ROOT
+[ ] .github/workflows/deploy.yml exists
+[ ] rates.xlsx exists at ROOT
+[ ] index.html exists at ROOT
+[ ] package.json + package-lock.json exist
+[ ] src/ exists
+[ ] .nvmrc exists
+
+After uploading:
+[ ] Repository Settings -> Pages -> Source = GitHub Actions
+[ ] Actions workflow "Deploy QGE Rate Portal to GitHub Pages" succeeds
+[ ] Open the Pages URL shown by GitHub

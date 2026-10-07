@@ -1,0 +1,36 @@
+QGE RATE PORTAL — GITHUB UPLOAD
+
+1. Upload ALL files and folders in this package to the ROOT of your GitHub repository.
+2. Do NOT upload the outer ZIP folder as a nested directory.
+3. Keep .github/workflows/deploy.yml in that exact path.
+4. Keep rates.xlsx in the repository ROOT.
+
+Required root items:
+- index.html
+- package.json
+- package-lock.json
+- vite.config.ts
+- tsconfig.json
+- .nvmrc
+- rates.xlsx
+- src/
+- .github/workflows/deploy.yml
+
+IMPORTANT — one-time Pages setting:
+GitHub repository -> Settings -> Pages -> Source -> GitHub Actions
+
+Then push/commit to main. The workflow will:
+- install dependencies
+- build the Vite/React portal
+- copy rates.xlsx into dist/
+- upload the Pages artifact
+- deploy the site to GitHub Pages
+
+For qge1983/Price, the normal Pages address is:
+https://qge1983.github.io/Price/
+
+Monthly rates:
+Replace the root rates.xlsx with the latest file, keep the filename exactly "rates.xlsx", then commit/push.
+
+Security note:
+This is a static GitHub Pages site. The login gate is client-side and is not suitable for confidential data.
