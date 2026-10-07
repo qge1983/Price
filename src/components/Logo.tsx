@@ -1,55 +1,18 @@
-import { useState } from "react";
+import { cn } from '../utils/cn';
 
-export function LogoSvg({ className = "" }: { className?: string }) {
+export function Logo({ size = 36, className }: { size?: number; className?: string }) {
+  const small = size < 30;
   return (
-    <svg viewBox="0 0 420 400" className={className} aria-label="Qaiser Group of Electronics logo">
-      {/* Red arc */}
-      <path
-        d="M82.1 271 A150 150 0 1 1 340.9 121.6"
-        fill="none"
-        stroke="#EE3B3F"
-        strokeWidth="64"
-      />
-      {/* Red cross bar */}
-      <path d="M84 152 L236 152 A27 27 0 0 1 236 206 L84 206 Z" fill="#EE3B3F" />
-      {/* Black arc */}
-      <path
-        d="M346 133.7 A150 150 0 0 1 178.9 332.7"
-        fill="none"
-        stroke="#1A1A1A"
-        strokeWidth="64"
-      />
-      {/* Black tail */}
-      <path d="M58 312 C110 332 150 338 196 338 L196 364 C140 362 96 344 58 312 Z" fill="#1A1A1A" />
-      {/* Band */}
-      <rect x="168" y="322" width="232" height="66" rx="8" fill="#1A1A1A" />
-      <text
-        x="284"
-        y="368"
-        textAnchor="middle"
-        fill="#fff"
-        fontSize="36"
-        fontWeight="800"
-        fontFamily="'Oswald','Arial Narrow',Impact,sans-serif"
-        textLength="196"
-        lengthAdjust="spacingAndGlyphs"
-      >
-        SINCE 1983
-      </text>
-    </svg>
-  );
-}
-
-/** Uses logo.png from the repository root if present, otherwise the built-in SVG */
-export default function Logo({ className = "" }: { className?: string }) {
-  const [failed, setFailed] = useState(false);
-  if (failed) return <LogoSvg className={className} />;
-  return (
-    <img
-      src="logo.png"
-      alt="Qaiser Group of Electronics"
-      className={`${className} object-contain`}
-      onError={() => setFailed(true)}
-    />
+    <span
+      aria-hidden="true"
+      className={cn(
+        'relative inline-grid shrink-0 place-items-center overflow-hidden rounded-[28%] bg-gradient-to-br from-red-500 via-red-600 to-red-800 font-black leading-none text-white shadow-md shadow-red-950/40 ring-1 ring-inset ring-white/15',
+        className,
+      )}
+      style={{ width: size, height: size, fontSize: small ? size * 0.55 : size * 0.31 }}
+    >
+      <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent" />
+      <span className="relative tracking-[-0.04em]">{small ? 'Q' : 'QGE'}</span>
+    </span>
   );
 }
