@@ -30,7 +30,7 @@ export const CONFIG = {
     usernameSha256: 'f785a45de055b37ca271f265d5d7d248a29c0984c4bb013c0271ebf492750ed3',
     passwordSha256: 'e0bc60c82713f64ef8a57c0c40d02ce24fd0141d5cc3086259c19b1e62a62bea',
     /** "Keep me signed in" duration */
-    rememberDays: 30,
+    rememberDays: 1/48,
   },
 
   /** Currency label shown before amounts */
