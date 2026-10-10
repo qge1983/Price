@@ -24,7 +24,7 @@
       "purpose": "any"
     },
     {
-      "src": "./src/favicon.png",
+      "src": "./favicon.png",
       "type": "image/png",
       "purpose": "any"
     }
